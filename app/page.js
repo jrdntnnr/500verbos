@@ -157,7 +157,19 @@ export default function Home() {
                      onClick={() => toggle(v.rank)}>
                   <div>
                     <div className="text-sm text-gray-500 dark:text-gray-400">#{v.rank}</div>
+                    <div className="flex items-center gap-2">
                     <div className="text-2xl font-bold text-gray-900 dark:text-white">{v.verb}</div>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        speak(v.verb)
+                      }}
+                      className="w-8 h-8 flex items-center justify-center rounded-full bg-purple-600 hover:bg-purple-700 text-white transition"
+                      title="Play pronunciation"
+                    >
+                      🔊
+                    </button>
+                  </div>
                     <div className="text-gray-600 dark:text-gray-300">{v.translation}</div>
                   </div>
                   <div className="flex items-center gap-2">
@@ -211,9 +223,10 @@ function Table({ title, persons, rows, onSpeak }) {
                   <td key={i} className="px-3 py-2">
                     <button
                       onClick={() => onSpeak(f)}
-                      className="rounded-lg px-2 py-1 hover:bg-purple-50 dark:hover:bg-gray-600 transition"
-                      title="Speak">
-                      {f}
+                      className="flex items-center gap-2 rounded-lg px-2 py-1 hover:bg-purple-50 dark:hover:bg-gray-600 transition"
+                      title="Play pronunciation">
+                      <span>{f}</span>
+                      <span className="text-sm">🔊</span>
                     </button>
                   </td>
                 ))}
@@ -250,8 +263,13 @@ function Tabs({ verb, onSpeak }) {
         ))}
       </div>
 
-      {tab==='indicativo' && <Table title="Indicativo" persons={persons} rows={indRows} onSpeak={onSpeak} />}
-      {tab==='subjuntivo' && <Table title="Subjuntivo" persons={persons} rows={sjRows} onSpeak={onSpeak} />}
+      {tab==='indicativo' && (
+        <Table title="Indicativo" persons={persons} rows={indRows} onSpeak={onSpeak} />
+      )}
+
+      {tab==='subjuntivo' && (
+        <Table title="Subjuntivo" persons={persons} rows={sjRows} onSpeak={onSpeak} />
+      )}
 
       {tab==='imperativo' && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -261,9 +279,12 @@ function Tabs({ verb, onSpeak }) {
               {["tu","você","nós","vós","vocês"].map(p => (
                 <li key={p} className="flex items-center gap-3">
                   <span className="w-20 text-gray-600 dark:text-gray-300">{p}</span>
-                  <button onClick={() => onSpeak(c.imperativo.afirmativo[p])}
-                          className="rounded-lg px-2 py-1 hover:bg-purple-50 dark:hover:bg-gray-600 transition">
-                    {c.imperativo.afirmativo[p]}
+                  <button
+                    onClick={() => onSpeak(c.imperativo.afirmativo[p])}
+                    className="flex items-center gap-2 rounded-lg px-2 py-1 hover:bg-purple-50 dark:hover:bg-gray-600 transition"
+                    title="Play pronunciation">
+                    <span>{c.imperativo.afirmativo[p]}</span>
+                    <span className="text-sm">🔊</span>
                   </button>
                 </li>
               ))}
@@ -275,9 +296,12 @@ function Tabs({ verb, onSpeak }) {
               {["tu","você","nós","vós","vocês"].map(p => (
                 <li key={p} className="flex items-center gap-3">
                   <span className="w-20 text-gray-600 dark:text-gray-300">{p}</span>
-                  <button onClick={() => onSpeak(c.imperativo.negativo[p])}
-                          className="rounded-lg px-2 py-1 hover:bg-purple-50 dark:hover:bg-gray-600 transition">
-                    {c.imperativo.negativo[p]}
+                  <button
+                    onClick={() => onSpeak(c.imperativo.negativo[p])}
+                    className="flex items-center gap-2 rounded-lg px-2 py-1 hover:bg-purple-50 dark:hover:bg-gray-600 transition"
+                    title="Play pronunciation">
+                    <span>{c.imperativo.negativo[p]}</span>
+                    <span className="text-sm">🔊</span>
                   </button>
                 </li>
               ))}
@@ -291,12 +315,16 @@ function Tabs({ verb, onSpeak }) {
           {Object.entries(c.non_finite).map(([k,v]) => (
             <div key={k} className="bg-gray-50 dark:bg-gray-700 rounded-xl p-3">
               <div className="text-sm text-gray-600 dark:text-gray-300">{k}</div>
-              <button onClick={() => onSpeak(v)}
-                      className="mt-1 text-lg font-semibold hover:underline">
-                {v}
+              <button
+                onClick={() => onSpeak(v)}
+                className="mt-1 text-lg font-semibold hover:underline flex items-center gap-2"
+                title="Play pronunciation">
+                <span>{v}</span>
+                <span className="text-sm">🔊</span>
               </button>
             </div>
           ))}
+
           <div className="md:col-span-3">
             <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Infinitivo Pessoal</h3>
             <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
@@ -325,8 +353,10 @@ function Tabs({ verb, onSpeak }) {
                       <td key={i} className="px-3 py-2">
                         <button
                           onClick={() => onSpeak(form)}
-                          className="rounded-lg px-2 py-1 hover:bg-purple-50 dark:hover:bg-gray-600 transition">
-                          {form}
+                          className="flex items-center gap-2 rounded-lg px-2 py-1 hover:bg-purple-50 dark:hover:bg-gray-600 transition"
+                          title="Play pronunciation">
+                          <span>{form}</span>
+                          <span className="text-sm">🔊</span>
                         </button>
                       </td>
                     ))}
@@ -335,7 +365,7 @@ function Tabs({ verb, onSpeak }) {
               </table>
             </div>
           </div>
-        </div>   {/* <-- closes grid wrapper */}
+        </div>
       )}
     </div>
   )
