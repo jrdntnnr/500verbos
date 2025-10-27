@@ -26,7 +26,7 @@ export default function Home() {
   const [expanded, setExpanded] = useState(new Set())
   const [dark, setDark] = useState(false)
 
-  // TTS voice (Portuguese, EP if available)
+  // TTS voice (Portuguese; prefer EP)
   const voiceRef = useRef(null)
   useEffect(() => {
     if (typeof window === 'undefined' || !('speechSynthesis' in window)) return
@@ -61,7 +61,7 @@ export default function Home() {
     synth.speak(u)
   }
 
-  // Load JSON
+  // Load conjugations
   useEffect(() => {
     fetch('/conjugations.json')
       .then(r => {
@@ -261,9 +261,9 @@ function Tabs({ verb, onSpeak }) {
               {["tu","você","nós","vós","vocês"].map(p => (
                 <li key={p} className="flex items-center gap-3">
                   <span className="w-20 text-gray-600 dark:text-gray-300">{p}</span>
-                  <button onClick={() => onSpeak(verb.conjugations.imperativo.afirmativo[p])}
+                  <button onClick={() => onSpeak(c.imperativo.afirmativo[p])}
                           className="rounded-lg px-2 py-1 hover:bg-purple-50 dark:hover:bg-gray-600 transition">
-                    {verb.conjugations.imperativo.afirmativo[p]}
+                    {c.imperativo.afirmativo[p]}
                   </button>
                 </li>
               ))}
@@ -275,9 +275,9 @@ function Tabs({ verb, onSpeak }) {
               {["tu","você","nós","vós","vocês"].map(p => (
                 <li key={p} className="flex items-center gap-3">
                   <span className="w-20 text-gray-600 dark:text-gray-300">{p}</span>
-                  <button onClick={() => onSpeak(verb.conjugations.imperativo.negativo[p])}
+                  <button onClick={() => onSpeak(c.imperativo.negativo[p])}
                           className="rounded-lg px-2 py-1 hover:bg-purple-50 dark:hover:bg-gray-600 transition">
-                    {verb.conjugations.imperativo.negativo[p]}
+                    {c.imperativo.negativo[p]}
                   </button>
                 </li>
               ))}
@@ -288,7 +288,7 @@ function Tabs({ verb, onSpeak }) {
 
       {tab==='non_finite' && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {Object.entries(verb.conjugations.non_finite).map(([k,v]) => (
+          {Object.entries(c.non_finite).map(([k,v]) => (
             <div key={k} className="bg-gray-50 dark:bg-gray-700 rounded-xl p-3">
               <div className="text-sm text-gray-600 dark:text-gray-300">{k}</div>
               <button onClick={() => onSpeak(v)}
@@ -297,7 +297,6 @@ function Tabs({ verb, onSpeak }) {
               </button>
             </div>
           ))}
-          {/* Infinitivo pessoal table */}
           <div className="md:col-span-3">
             <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Infinitivo Pessoal</h3>
             <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
@@ -312,17 +311,23 @@ function Tabs({ verb, onSpeak }) {
                 </thead>
                 <tbody>
                   <tr className="border-t border-gray-100 dark:border-gray-700">
-                    <td className="px-3 py-2 font-semibold text-gray-700 dark:text-gray-200">Infinitivo Pessoal</td>
+                    <td className="px-3 py-2 font-semibold text-gray-700 dark:text-gray-200">
+                      Infinitivo Pessoal
+                    </td>
                     {[
-                      verb.conjugations.non_finite.infinitivo,
-                      verb.conjugations.non_finite.infinitivo + "es",
-                      verb.conjugations.non_finite.infinitivo,
-                      verb.conjugations.non_finite.infinitivo + "mos",
-                      verb.conjugations.non_finite.infinitivo + "des",
-                      verb.conjugations.non_finite.infinitivo + "em",
+                      c.non_finite.infinitivo,
+                      c.non_finite.infinitivo + "es",
+                      c.non_finite.infinitivo,
+                      c.non_finite.infinitivo + "mos",
+                      c.non_finite.infinitivo + "des",
+                      c.non_finite.infinitivo + "em",
                     ].map((form, i) => (
                       <td key={i} className="px-3 py-2">
-                        <button onClick={() => onSpeak(form)} className="rounded-lg px-2 py-1 hover:bg-purple-50 dark:hover:bg-gray-600 transition">{form}</button>
+                        <button
+                          onClick={() => onSpeak(form)}
+                          className="rounded-lg px-2 py-1 hover:bg-purple-50 dark:hover:bg-gray-600 transition">
+                          {form}
+                        </button>
                       </td>
                     ))}
                   </tr>
@@ -330,6 +335,7 @@ function Tabs({ verb, onSpeak }) {
               </table>
             </div>
           </div>
+        </div>   {/* <-- closes grid wrapper */}
       )}
     </div>
   )
