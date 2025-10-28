@@ -9860,7 +9860,7 @@
   {
     "rank": 94,
     "verb": "acabar",
-    "translation": "to acabar",
+    "translation": "to finish",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -9966,7 +9966,7 @@
   {
     "rank": 95,
     "verb": "acontecer",
-    "translation": "to acontecer",
+    "translation": "to happen",
     "category": "er",
     "irregular": false,
     "conjugations": {
@@ -10072,7 +10072,7 @@
   {
     "rank": 96,
     "verb": "manter",
-    "translation": "to manter",
+    "translation": "to maintain",
     "category": "er",
     "irregular": true,
     "conjugations": {
@@ -10178,7 +10178,7 @@
   {
     "rank": 97,
     "verb": "ocorrer",
-    "translation": "to ocorrer",
+    "translation": "to occur",
     "category": "er",
     "irregular": false,
     "conjugations": {
@@ -13252,7 +13252,7 @@
   {
     "rank": 126,
     "verb": "rir",
-    "translation": "to rir",
+    "translation": "to laugh",
     "category": "ir",
     "irregular": true,
     "conjugations": {
@@ -13358,7 +13358,7 @@
   {
     "rank": 127,
     "verb": "chorar",
-    "translation": "to chorar",
+    "translation": "to cry",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -13464,7 +13464,7 @@
   {
     "rank": 128,
     "verb": "casar",
-    "translation": "to casar",
+    "translation": "to marry",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -17174,7 +17174,7 @@
   {
     "rank": 163,
     "verb": "rejeitar",
-    "translation": "to rejeitar",
+    "translation": "to reject",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -19400,7 +19400,7 @@
   {
     "rank": 184,
     "verb": "atravessar",
-    "translation": "to atravessar",
+    "translation": "to cross",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -43038,7 +43038,7 @@
   {
     "rank": 407,
     "verb": "acertar",
-    "translation": "to acertar",
+    "translation": "to hit",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -43144,7 +43144,7 @@
   {
     "rank": 408,
     "verb": "aguardar",
-    "translation": "to aguardar",
+    "translation": "to await",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -43250,7 +43250,7 @@
   {
     "rank": 409,
     "verb": "apontar",
-    "translation": "to apontar",
+    "translation": "to point",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -43356,7 +43356,7 @@
   {
     "rank": 410,
     "verb": "aproveitar",
-    "translation": "to aproveitar",
+    "translation": "to take advantage",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -43462,7 +43462,7 @@
   {
     "rank": 411,
     "verb": "arrivar",
-    "translation": "to arrivar",
+    "translation": "to arrive",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -43568,7 +43568,7 @@
   {
     "rank": 412,
     "verb": "atingir",
-    "translation": "to atingir",
+    "translation": "to reach",
     "category": "ir",
     "irregular": false,
     "conjugations": {
@@ -43674,7 +43674,7 @@
   {
     "rank": 413,
     "verb": "atender",
-    "translation": "to atender",
+    "translation": "to answer",
     "category": "er",
     "irregular": false,
     "conjugations": {
@@ -43780,7 +43780,7 @@
   {
     "rank": 414,
     "verb": "aumentar",
-    "translation": "to aumentar",
+    "translation": "to increase",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -43886,7 +43886,7 @@
   {
     "rank": 415,
     "verb": "bater",
-    "translation": "to bater",
+    "translation": "to hit",
     "category": "er",
     "irregular": false,
     "conjugations": {
@@ -43992,7 +43992,7 @@
   {
     "rank": 416,
     "verb": "beijar",
-    "translation": "to beijar",
+    "translation": "to kiss",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -44098,7 +44098,7 @@
   {
     "rank": 417,
     "verb": "brincar",
-    "translation": "to brincar",
+    "translation": "to play",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -44204,7 +44204,7 @@
   {
     "rank": 418,
     "verb": "cancelar",
-    "translation": "to cancelar",
+    "translation": "to cancel",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -44310,7 +44310,7 @@
   {
     "rank": 419,
     "verb": "cansar",
-    "translation": "to cansar",
+    "translation": "to tire",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -44416,7 +44416,7 @@
   {
     "rank": 420,
     "verb": "cavar",
-    "translation": "to cavar",
+    "translation": "to dig",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -44522,7 +44522,7 @@
   {
     "rank": 421,
     "verb": "celebrar",
-    "translation": "to celebrar",
+    "translation": "to celebrate",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -44628,7 +44628,7 @@
   {
     "rank": 422,
     "verb": "chutar",
-    "translation": "to chutar",
+    "translation": "to kick",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -44734,7 +44734,7 @@
   {
     "rank": 423,
     "verb": "colher",
-    "translation": "to colher",
+    "translation": "to harvest",
     "category": "er",
     "irregular": false,
     "conjugations": {
@@ -44840,7 +44840,7 @@
   {
     "rank": 424,
     "verb": "colorir",
-    "translation": "to colorir",
+    "translation": "to color",
     "category": "ir",
     "irregular": false,
     "conjugations": {
@@ -44946,7 +44946,7 @@
   {
     "rank": 425,
     "verb": "combinar",
-    "translation": "to combinar",
+    "translation": "to arrange",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -45052,7 +45052,7 @@
   {
     "rank": 426,
     "verb": "completar",
-    "translation": "to completar",
+    "translation": "to complete",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -45158,7 +45158,7 @@
   {
     "rank": 427,
     "verb": "consertar",
-    "translation": "to consertar",
+    "translation": "to fix",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -45264,7 +45264,7 @@
   {
     "rank": 428,
     "verb": "constituir",
-    "translation": "to constituir",
+    "translation": "to constitute",
     "category": "ir",
     "irregular": false,
     "conjugations": {
@@ -45370,7 +45370,7 @@
   {
     "rank": 429,
     "verb": "convencer",
-    "translation": "to convencer",
+    "translation": "to convince",
     "category": "er",
     "irregular": false,
     "conjugations": {
@@ -45476,7 +45476,7 @@
   {
     "rank": 430,
     "verb": "cuidar",
-    "translation": "to cuidar",
+    "translation": "to care for",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -45582,7 +45582,7 @@
   {
     "rank": 431,
     "verb": "curtir",
-    "translation": "to curtir",
+    "translation": "to enjoy",
     "category": "ir",
     "irregular": false,
     "conjugations": {
@@ -45688,7 +45688,7 @@
   {
     "rank": 432,
     "verb": "danificar",
-    "translation": "to danificar",
+    "translation": "to damage",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -45794,7 +45794,7 @@
   {
     "rank": 433,
     "verb": "decorar",
-    "translation": "to decorar",
+    "translation": "to decorate",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -45900,7 +45900,7 @@
   {
     "rank": 434,
     "verb": "delimitar",
-    "translation": "to delimitar",
+    "translation": "to delimit",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -46006,7 +46006,7 @@
   {
     "rank": 435,
     "verb": "demorar",
-    "translation": "to demorar",
+    "translation": "to take time",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -46112,7 +46112,7 @@
   {
     "rank": 436,
     "verb": "depender",
-    "translation": "to depender",
+    "translation": "to depend",
     "category": "er",
     "irregular": false,
     "conjugations": {
@@ -46218,7 +46218,7 @@
   {
     "rank": 437,
     "verb": "descrever",
-    "translation": "to descrever",
+    "translation": "to describe",
     "category": "er",
     "irregular": false,
     "conjugations": {
@@ -46324,7 +46324,7 @@
   {
     "rank": 438,
     "verb": "descobrir",
-    "translation": "to descobrir",
+    "translation": "to discover",
     "category": "ir",
     "irregular": false,
     "conjugations": {
@@ -46430,7 +46430,7 @@
   {
     "rank": 439,
     "verb": "desenhar",
-    "translation": "to desenhar",
+    "translation": "to draw",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -46536,7 +46536,7 @@
   {
     "rank": 440,
     "verb": "despedir",
-    "translation": "to despedir",
+    "translation": "to fire",
     "category": "ir",
     "irregular": false,
     "conjugations": {
@@ -46642,7 +46642,7 @@
   {
     "rank": 441,
     "verb": "despir",
-    "translation": "to despir",
+    "translation": "to undress",
     "category": "ir",
     "irregular": false,
     "conjugations": {
@@ -46748,7 +46748,7 @@
   {
     "rank": 442,
     "verb": "detectar",
-    "translation": "to detectar",
+    "translation": "to detect",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -46854,7 +46854,7 @@
   {
     "rank": 443,
     "verb": "determinar",
-    "translation": "to determinar",
+    "translation": "to determine",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -46960,7 +46960,7 @@
   {
     "rank": 444,
     "verb": "discorrer",
-    "translation": "to discorrer",
+    "translation": "to elaborate",
     "category": "er",
     "irregular": false,
     "conjugations": {
@@ -47066,7 +47066,7 @@
   {
     "rank": 445,
     "verb": "disponibilizar",
-    "translation": "to disponibilizar",
+    "translation": "to make available",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -47172,7 +47172,7 @@
   {
     "rank": 446,
     "verb": "distribuir",
-    "translation": "to distribuir",
+    "translation": "to distribute",
     "category": "ir",
     "irregular": false,
     "conjugations": {
@@ -47278,7 +47278,7 @@
   {
     "rank": 447,
     "verb": "dividir",
-    "translation": "to dividir",
+    "translation": "to divide",
     "category": "ir",
     "irregular": false,
     "conjugations": {
@@ -47384,7 +47384,7 @@
   {
     "rank": 448,
     "verb": "dominar",
-    "translation": "to dominar",
+    "translation": "to dominate",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -47490,7 +47490,7 @@
   {
     "rank": 449,
     "verb": "durar",
-    "translation": "to durar",
+    "translation": "to last",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -47596,7 +47596,7 @@
   {
     "rank": 450,
     "verb": "elevar",
-    "translation": "to elevar",
+    "translation": "to raise",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -47702,7 +47702,7 @@
   {
     "rank": 451,
     "verb": "embarcar",
-    "translation": "to embarcar",
+    "translation": "to board",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -47808,7 +47808,7 @@
   {
     "rank": 452,
     "verb": "embrulhar",
-    "translation": "to embrulhar",
+    "translation": "to wrap",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -47914,7 +47914,7 @@
   {
     "rank": 453,
     "verb": "emitir",
-    "translation": "to emitir",
+    "translation": "to issue",
     "category": "ir",
     "irregular": false,
     "conjugations": {
@@ -48020,7 +48020,7 @@
   {
     "rank": 454,
     "verb": "encerrar",
-    "translation": "to encerrar",
+    "translation": "to close",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -48126,7 +48126,7 @@
   {
     "rank": 455,
     "verb": "enfrentar",
-    "translation": "to enfrentar",
+    "translation": "to face",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -48232,7 +48232,7 @@
   {
     "rank": 456,
     "verb": "engolir",
-    "translation": "to engolir",
+    "translation": "to swallow",
     "category": "ir",
     "irregular": false,
     "conjugations": {
@@ -48338,7 +48338,7 @@
   {
     "rank": 457,
     "verb": "entregar",
-    "translation": "to entregar",
+    "translation": "to deliver",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -48444,7 +48444,7 @@
   {
     "rank": 458,
     "verb": "erguer",
-    "translation": "to erguer",
+    "translation": "to raise",
     "category": "er",
     "irregular": false,
     "conjugations": {
@@ -48550,7 +48550,7 @@
   {
     "rank": 459,
     "verb": "errar",
-    "translation": "to errar",
+    "translation": "to err",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -48656,7 +48656,7 @@
   {
     "rank": 460,
     "verb": "estabelecer",
-    "translation": "to estabelecer",
+    "translation": "to establish",
     "category": "er",
     "irregular": false,
     "conjugations": {
@@ -48762,7 +48762,7 @@
   {
     "rank": 461,
     "verb": "exibir",
-    "translation": "to exibir",
+    "translation": "to display",
     "category": "ir",
     "irregular": false,
     "conjugations": {
@@ -48868,7 +48868,7 @@
   {
     "rank": 462,
     "verb": "explorar",
-    "translation": "to explorar",
+    "translation": "to explore",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -48974,7 +48974,7 @@
   {
     "rank": 463,
     "verb": "exportar",
-    "translation": "to exportar",
+    "translation": "to export",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -49080,7 +49080,7 @@
   {
     "rank": 464,
     "verb": "fabricar",
-    "translation": "to fabricar",
+    "translation": "to manufacture",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -49186,7 +49186,7 @@
   {
     "rank": 465,
     "verb": "faltar",
-    "translation": "to faltar",
+    "translation": "to lack",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -49292,7 +49292,7 @@
   {
     "rank": 466,
     "verb": "ferir",
-    "translation": "to ferir",
+    "translation": "to injure",
     "category": "ir",
     "irregular": false,
     "conjugations": {
@@ -49398,7 +49398,7 @@
   {
     "rank": 467,
     "verb": "finalizar",
-    "translation": "to finalizar",
+    "translation": "to finalize",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -49504,7 +49504,7 @@
   {
     "rank": 468,
     "verb": "fornecer",
-    "translation": "to fornecer",
+    "translation": "to provide",
     "category": "er",
     "irregular": false,
     "conjugations": {
@@ -49610,7 +49610,7 @@
   {
     "rank": 469,
     "verb": "fotografar",
-    "translation": "to fotografar",
+    "translation": "to photograph",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -49716,7 +49716,7 @@
   {
     "rank": 470,
     "verb": "gerar",
-    "translation": "to gerar",
+    "translation": "to generate",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -49822,7 +49822,7 @@
   {
     "rank": 471,
     "verb": "iluminar",
-    "translation": "to iluminar",
+    "translation": "to illuminate",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -49928,7 +49928,7 @@
   {
     "rank": 472,
     "verb": "importar",
-    "translation": "to importar",
+    "translation": "to matter",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -50034,7 +50034,7 @@
   {
     "rank": 473,
     "verb": "impor",
-    "translation": "to impor",
+    "translation": "to impose",
     "category": "ir",
     "irregular": false,
     "conjugations": {
@@ -50140,7 +50140,7 @@
   {
     "rank": 474,
     "verb": "indicar",
-    "translation": "to indicar",
+    "translation": "to indicate",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -50246,7 +50246,7 @@
   {
     "rank": 475,
     "verb": "iniciar",
-    "translation": "to iniciar",
+    "translation": "to start",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -50352,7 +50352,7 @@
   {
     "rank": 476,
     "verb": "insistir",
-    "translation": "to insistir",
+    "translation": "to insist",
     "category": "ir",
     "irregular": false,
     "conjugations": {
@@ -50458,7 +50458,7 @@
   {
     "rank": 477,
     "verb": "investigar",
-    "translation": "to investigar",
+    "translation": "to investigate",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -50564,7 +50564,7 @@
   {
     "rank": 478,
     "verb": "justificar",
-    "translation": "to justificar",
+    "translation": "to justify",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -50670,7 +50670,7 @@
   {
     "rank": 479,
     "verb": "lançar",
-    "translation": "to lançar",
+    "translation": "to launch",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -50776,7 +50776,7 @@
   {
     "rank": 480,
     "verb": "legalizar",
-    "translation": "to legalizar",
+    "translation": "to legalize",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -50882,7 +50882,7 @@
   {
     "rank": 481,
     "verb": "limitar",
-    "translation": "to limitar",
+    "translation": "to limit",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -50988,7 +50988,7 @@
   {
     "rank": 482,
     "verb": "localizar",
-    "translation": "to localizar",
+    "translation": "to locate",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -51094,7 +51094,7 @@
   {
     "rank": 483,
     "verb": "lotar",
-    "translation": "to lotar",
+    "translation": "to fill up",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -51200,7 +51200,7 @@
   {
     "rank": 484,
     "verb": "melhorar",
-    "translation": "to melhorar",
+    "translation": "to improve",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -51518,7 +51518,7 @@
   {
     "rank": 487,
     "verb": "oferecer",
-    "translation": "to oferecer",
+    "translation": "to offer",
     "category": "er",
     "irregular": false,
     "conjugations": {
@@ -51624,7 +51624,7 @@
   {
     "rank": 488,
     "verb": "pintar",
-    "translation": "to pintar",
+    "translation": "to paint",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -51730,7 +51730,7 @@
   {
     "rank": 489,
     "verb": "ponderar",
-    "translation": "to ponderar",
+    "translation": "to ponder",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -51836,7 +51836,7 @@
   {
     "rank": 490,
     "verb": "preservar",
-    "translation": "to preservar",
+    "translation": "to preserve",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -51942,7 +51942,7 @@
   {
     "rank": 491,
     "verb": "prever",
-    "translation": "to prever",
+    "translation": "to foresee",
     "category": "er",
     "irregular": false,
     "conjugations": {
@@ -52260,7 +52260,7 @@
   {
     "rank": 494,
     "verb": "providenciar",
-    "translation": "to providenciar",
+    "translation": "to provide",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -52366,7 +52366,7 @@
   {
     "rank": 495,
     "verb": "pular",
-    "translation": "to pular",
+    "translation": "to jump",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -52472,7 +52472,7 @@
   {
     "rank": 496,
     "verb": "queimar",
-    "translation": "to queimar",
+    "translation": "to burn",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -52578,7 +52578,7 @@
   {
     "rank": 497,
     "verb": "quebrar",
-    "translation": "to quebrar",
+    "translation": "to break",
     "category": "ar",
     "irregular": false,
     "conjugations": {
@@ -52790,7 +52790,7 @@
   {
     "rank": 499,
     "verb": "recolher",
-    "translation": "to recolher",
+    "translation": "to collect",
     "category": "er",
     "irregular": false,
     "conjugations": {
@@ -52896,7 +52896,7 @@
   {
     "rank": 500,
     "verb": "recomeçar",
-    "translation": "to recomeçar",
+    "translation": "to restart",
     "category": "ar",
     "irregular": false,
     "conjugations": {
