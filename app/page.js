@@ -17,7 +17,6 @@ const SUBJUNCTIVE_TENSES = [
   ["futuro", "SUBJ. FUTURO"]
 ]
 
-// 70s tag class by category
 const catTag = (v) =>
   v.irregular ? 'tag tag-irreg'
     : v.category === 'ar' ? 'tag tag-ar'
@@ -28,16 +27,13 @@ export default function Home() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-
   const [search, setSearch] = useState('')
-  const [filterCat, setFilterCat] = useState('all') // all | ar | er | ir | irregular
+  const [filterCat, setFilterCat] = useState('all')
   const [expanded, setExpanded] = useState(new Set())
-
-  // ephemeral status “telemetry”
   const [status, setStatus] = useState({ filter: 'ALL', search: '' })
 
-  // TTS voice (prefer EP)
   const voiceRef = useRef(null)
+
   useEffect(() => {
     if (typeof window === 'undefined' || !('speechSynthesis' in window)) return
     const synth = window.speechSynthesis
@@ -71,7 +67,6 @@ export default function Home() {
     synth.speak(u)
   }
 
-  // Load conjugations
   useEffect(() => {
     fetch('/conjugations.json')
       .then(r => {
@@ -83,7 +78,6 @@ export default function Home() {
       .finally(() => setLoading(false))
   }, [])
 
-  // Filtered rows
   const filtered = useMemo(() => {
     let rows = data
     if (filterCat !== 'all') {
@@ -100,20 +94,17 @@ export default function Home() {
     return rows
   }, [data, search, filterCat])
 
-  // Interaction: toggle card
   const toggle = (rank) => {
     const s = new Set(expanded)
     s.has(rank) ? s.delete(rank) : s.add(rank)
     setExpanded(s)
   }
 
-  // Interaction: filter buttons -> update status
   const setFilter = (k) => {
     setFilterCat(k)
     setStatus(s => ({ ...s, filter: k.toUpperCase() }))
   }
 
-  // Interaction: search box -> update status
   useEffect(() => {
     const id = setTimeout(() => setStatus(s => ({ ...s, search })), 120)
     return () => clearTimeout(id)
@@ -122,7 +113,7 @@ export default function Home() {
   if (loading) return (
     <div className="min-h-screen console-bg grid place-items-center">
       <div className="term-card p-6 rounded-xl font-mono">
-        >> BOOT… <span className="cursor" />
+        <span className="mr-2">&gt;&gt;</span> BOOT… <span className="cursor" />
       </div>
     </div>
   )
@@ -130,7 +121,7 @@ export default function Home() {
   if (error) return (
     <div className="min-h-screen console-bg p-6">
       <div className="max-w-3xl mx-auto term-card rounded-2xl p-6">
-        <div className="ascii-title">>> ERROR</div>
+        <div className="ascii-title"><span className="mr-2">&gt;&gt;</span> ERROR</div>
         <div className="ascii-rule" />
         <pre>{error}</pre>
         <div className="ascii-rule" />
@@ -141,9 +132,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen console-bg px-3 md:px-6 py-5">
-      {/* Terminal Header */}
       <header className="max-w-7xl mx-auto term-card rounded-2xl p-5 md:p-7">
-        <div className="ascii-title text-xl md:text-2xl">>> EP VERB CONSOLE</div>
+        <div className="ascii-title text-xl md:text-2xl">
+          <span className="mr-2">&gt;&gt;</span> EP VERB CONSOLE
+        </div>
         <div className="ascii-rule" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 items-center">
           <div className="md:col-span-2">
@@ -173,7 +165,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Cards */}
       <main className="max-w-7xl mx-auto mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         {filtered.map(v => (
           <section key={v.rank} className="term-card rounded-2xl overflow-hidden">
@@ -209,7 +200,6 @@ export default function Home() {
         ))}
       </main>
 
-      {/* Footer status line */}
       <div className="max-w-7xl mx-auto mt-4 kv">
         └─ READY ▒ PRESS [AR]/[ER]/[IR]/[IRREGULAR] TO FILTER • CLICK A FORM TO SPEAK
       </div>
@@ -261,7 +251,6 @@ function Tabs({ verb, onSpeak }) {
   const [tab, setTab] = useState('indicativo')
   const c = verb.conjugations
   const persons = c.persons
-
   const indRows = INDICATIVE_TENSES.map(([k,label]) => [k, label, c.indicativo[k]])
   const sjRows  = SUBJUNCTIVE_TENSES.map(([k,label]) => [k, label, c.subjuntivo[k]])
 
@@ -287,101 +276,54 @@ function Tabs({ verb, onSpeak }) {
 
       {tab==='imperativo' && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <div className="kv mb-1">MODE</div>
-            <div className="text-[.95rem] text-[var(--accent)] tracking-[.06em]">IMPERATIVO AFIRMATIVO</div>
-            <ul className="mt-2 space-y-1">
-              {["tu","você","nós","vós","vocês"].map(p => (
-                <li key={p} className="flex items-center gap-3">
-                  <span className="w-20 text-[var(--dim)]">{p}</span>
-                  <button
-                    onClick={() => onSpeak(c.imperativo.afirmativo[p])}
-                    className="flex items-center gap-2 rounded px-2 py-1 hover:bg-white/5"
-                    title="play">
-                    <span>{c.imperativo.afirmativo[p]}</span>
-                    <span className="text-[12px] opacity-80">🔊</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <div className="kv mb-1">MODE</div>
-            <div className="text-[.95rem] text-[var(--accent)] tracking-[.06em]">IMPERATIVO NEGATIVO</div>
-            <ul className="mt-2 space-y-1">
-              {["tu","você","nós","vós","vocês"].map(p => (
-                <li key={p} className="flex items-center gap-3">
-                  <span className="w-20 text-[var(--dim)]">{p}</span>
-                  <button
-                    onClick={() => onSpeak(c.imperativo.negativo[p])}
-                    className="flex items-center gap-2 rounded px-2 py-1 hover:bg-white/5"
-                    title="play">
-                    <span>{c.imperativo.negativo[p]}</span>
-                    <span className="text-[12px] opacity-80">🔊</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <Imperativo title="IMPERATIVO AFIRMATIVO" forms={verb.conjugations.imperativo.afirmativo} onSpeak={onSpeak}/>
+          <Imperativo title="IMPERATIVO NEGATIVO" forms={verb.conjugations.imperativo.negativo} onSpeak={onSpeak}/>
         </div>
       )}
 
       {tab==='non_finite' && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {Object.entries(c.non_finite).map(([k,v]) => (
-            <div key={k} className="rounded-xl border border-[#1f2021] p-3 bg-black/30">
-              <div className="kv">{k.toUpperCase()}</div>
-              <button
-                onClick={() => onSpeak(v)}
-                className="mt-1 text-base hover:underline inline-flex items-center gap-2"
-                title="play">
-                <span>{v}</span>
-                <span className="text-[12px] opacity-80">🔊</span>
-              </button>
-            </div>
-          ))}
-
-          <div className="md:col-span-3">
-            <div className="kv mb-1">MODE</div>
-            <div className="text-[.95rem] text-[var(--accent)] tracking-[.06em]">INFINITIVO PESSOAL</div>
-            <div className="overflow-x-auto rounded-xl border border-[#1f2021] mt-2">
-              <table className="min-w-full text-left text-sm">
-                <thead className="bg-black/30">
-                  <tr>
-                    <th className="px-3 py-2"></th>
-                    {["eu","tu","ele/ela","nós","vós","eles/elas"].map(p => (
-                      <th key={p} className="px-3 py-2 text-[var(--dim)]">{p}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-t border-[#1f2021]">
-                    <td className="px-3 py-2 font-semibold">INF. PESSOAL</td>
-                    {[
-                      c.non_finite.infinitivo,
-                      c.non_finite.infinitivo + "es",
-                      c.non_finite.infinitivo,
-                      c.non_finite.infinitivo + "mos",
-                      c.non_finite.infinitivo + "des",
-                      c.non_finite.infinitivo + "em",
-                    ].map((form, i) => (
-                      <td key={i} className="px-2 py-1">
-                        <button
-                          onClick={() => onSpeak(form)}
-                          className="w-full text-left flex items-center gap-2 rounded px-2 py-1 hover:bg-white/5"
-                          title="play">
-                          <span>{form}</span>
-                          <span className="text-[12px] opacity-80">🔊</span>
-                        </button>
-                      </td>
-                    ))}
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+        <NonFinite c={verb.conjugations.non_finite} onSpeak={onSpeak}/>
       )}
+    </div>
+  )
+}
+
+function Imperativo({ title, forms, onSpeak }) {
+  return (
+    <div>
+      <div className="kv mb-1">MODE</div>
+      <div className="text-[.95rem] text-[var(--accent)] tracking-[.06em]">{title}</div>
+      <ul className="mt-2 space-y-1">
+        {["tu","você","nós","vós","vocês"].map(p => (
+          <li key={p} className="flex items-center gap-3">
+            <span className="w-20 text-[var(--dim)]">{p}</span>
+            <button onClick={() => onSpeak(forms[p])}
+              className="flex items-center gap-2 rounded px-2 py-1 hover:bg-white/5"
+              title="play">
+              <span>{forms[p]}</span>
+              <span className="text-[12px] opacity-80">🔊</span>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+function NonFinite({ c, onSpeak }) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {Object.entries(c).map(([k,v]) => (
+        <div key={k} className="rounded-xl border border-[#1f2021] p-3 bg-black/30">
+          <div className="kv">{k.toUpperCase()}</div>
+          <button onClick={() => onSpeak(v)}
+            className="mt-1 text-base hover:underline inline-flex items-center gap-2"
+            title="play">
+            <span>{v}</span>
+            <span className="text-[12px] opacity-80">🔊</span>
+          </button>
+        </div>
+      ))}
     </div>
   )
 }
