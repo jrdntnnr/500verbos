@@ -2,38 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base theme */
 :root {
-  --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --card-bg: #ffffff;
-  --text-primary: #1f2937;
-  --text-secondary: #6b7280;
-  --border-color: #e5e7eb;
+  --bg: #0b0c0d;
+  --grid: #111214;
+  --dot: #1a1b1e;
+  --text: #d8d5c6;
+  --dim: #9f9a88;
+  --accent: #d6cfb6;
 }
 
-.dark {
-  --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  --card-bg: #2d2d44;
-  --text-primary: #ffffff;
-  --text-secondary: #9ca3af;
-  --border-color: #4b5563;
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-body {
-  background: var(--bg-gradient);
-  color: var(--text-primary);
+/* Layered grid + dot background */
+.console-bg {
+  position: relative;
+  background:
+    linear-gradient(transparent 31px, var(--grid) 32px) 0 0/32px 32px,
+    linear-gradient(90deg, transparent 31px, var(--grid) 32px) 0 0/32px 32px,
+    radial-gradient(circle at 1px 1px, var(--dot) 1px, transparent 1px) 0 0/8px 8px;
 }
 
-@layer utilities {
-  .speaking {
-    animation: pulse 1s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.15);
-    }
-  }
+.console-bg::after { /* vertical scanline highlight */
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(214,207,182,0) 0%, rgba(214,207,182,.06) 50%, rgba(214,207,182,0) 100%);
+  mix-blend-mode: screen;
+  animation: scan 6.5s linear infinite;
+  pointer-events: none;
 }
+
+/* Card chrome */
+.console-card {
+  border: 1px solid #1a1a1a;
+  background: rgba(10,10,11,0.85);
+  box-shadow: 0 0 0 1px rgba(214,207,182,0.08) inset, 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* “CRT” subtle flicker/glow */
+.crt {
+  text-shadow: 0 0 8px rgba(214,207,182,0.08);
+  animation: flicker 6s infinite;
+}
+
+/* Divider line */
+.ascii-divider {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--grid), transparent);
+  margin: .75rem 0;
+}
+
+/* Tiny label */
+.label {
+  letter-spacing: .08em;
+  font-size: .7rem;
+  color: var(--dim);
+}
+
+/* Button */
+.btn {
+  border: 1px solid rgba(214,207,182,0.25);
+  background: rgba(214,207,182,0.04);
+  color: var(--text);
+}
+.btn:hover { background: rgba(214,207,182,0.08); }
+
+/* Speaker pill */
+.speak {
+  background: var(--accent);
+  color: #0b0c0d;
+}
+.speak:hover { filter: brightness(0.95); }
+
+/* Blinking cursor */
+.cursor {
+  width: .55ch; display: inline-block; background: var(--accent);
+  animation: blink 1.2s steps(1,end) infinite;
+}
+
+/* Micro “LED” dot */
+.led { width: 6px; height: 6px; background: var(--accent); opacity:.25; }
+.led.active { opacity:.9; box-shadow: 0 0 6px rgba(214,207,182,.6); animation: pulseDot 2.2s ease-in-out infinite; }
