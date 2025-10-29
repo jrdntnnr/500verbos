@@ -2,89 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base theme */
-:root {
-  --bg: #0b0c0d;
-  --grid: #111214;
-  --dot: #1a1b1e;
-  --text: #d8d5c6;
-  --dim: #9f9a88;
-  --accent: #d6cfb6;
+/* ---------- AMSTRAD / RETRO TERMINAL THEME (dark only) ---------- */
+:root{
+  --bg:#080a0a;                 /* deep CRT black */
+  --grid:#101112;               /* grid lines */
+  --dots:#141516;               /* tiny dot mesh */
+  --text:#dcd6c2;               /* warm phosphor */
+  --dim:#9f9988;                /* muted label */
+  --accent:#d4caa9;             /* pale amber glow */
+
+  /* 70s-muted palette for classes (distinct but subdued) */
+  --c-ar:#85a56b;               /* avocado green  */
+  --c-er:#c27b47;               /* burnt orange   */
+  --c-ir:#6e8aa8;               /* slate blue     */
+  --c-irreg:#b06e90;            /* dusky magenta  */
 }
 
-html, body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
+/* Base */
+html,body{background:var(--bg);color:var(--text);font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;}
+*{letter-spacing:.02em}
 
-/* Layered grid + dot background */
-.console-bg {
-  position: relative;
+/* Background: grid + dots + light scan */
+.console-bg{
+  position:relative;
   background:
-    linear-gradient(transparent 31px, var(--grid) 32px) 0 0/32px 32px,
-    linear-gradient(90deg, transparent 31px, var(--grid) 32px) 0 0/32px 32px,
-    radial-gradient(circle at 1px 1px, var(--dot) 1px, transparent 1px) 0 0/8px 8px;
+    linear-gradient(transparent 31px,var(--grid) 32px) 0 0/32px 32px,
+    linear-gradient(90deg,transparent 31px,var(--grid) 32px) 0 0/32px 32px,
+    radial-gradient(circle at 1px 1px,var(--dots) 1px,transparent 1px) 0 0/8px 8px;
+}
+.console-bg::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(212,202,169,.06),transparent);
+  animation:scan 8s linear infinite;
+  mix-blend-mode:screen;
 }
 
-.console-bg::after { /* vertical scanline highlight */
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(214,207,182,0) 0%, rgba(214,207,182,.06) 50%, rgba(214,207,182,0) 100%);
-  mix-blend-mode: screen;
-  animation: scan 6.5s linear infinite;
-  pointer-events: none;
-}
+/* Card shell */
+.term-card{border:1px solid #1a1b1c;background:rgba(10,11,11,.92);box-shadow:0 0 0 1px rgba(212,202,169,.06) inset,0 18px 40px rgba(0,0,0,.45);}
 
-/* Card chrome */
-.console-card {
-  border: 1px solid #1a1a1a;
-  background: rgba(10,10,11,0.85);
-  box-shadow: 0 0 0 1px rgba(214,207,182,0.08) inset, 0 12px 30px rgba(0,0,0,0.35);
-}
+/* ASCII chrome */
+.ascii-title{font-weight:700;letter-spacing:.08em}
+.ascii-rule{height:1px;background:linear-gradient(90deg,transparent,var(--grid),transparent);margin:.75rem 0}
 
-/* “CRT” subtle flicker/glow */
-.crt {
-  text-shadow: 0 0 8px rgba(214,207,182,0.08);
-  animation: flicker 6s infinite;
-}
+/* Status bar */
+.status{font-size:.75rem;color:var(--dim);display:flex;gap:1rem;flex-wrap:wrap}
+.status .dot{width:6px;height:6px;border-radius:2px;background:var(--accent);opacity:.3}
+.status .dot.live{opacity:.95;box-shadow:0 0 6px rgba(212,202,169,.6);animation:pulse 2.1s ease-in-out infinite}
 
-/* Divider line */
-.ascii-divider {
-  position: relative;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--grid), transparent);
-  margin: .75rem 0;
-}
+/* Buttons */
+.btn{border:1px solid rgba(212,202,169,.28);background:rgba(212,202,169,.05);color:var(--text);}
+.btn:hover{background:rgba(212,202,169,.09)}
+.btn-on{border-color:var(--accent);box-shadow:0 0 0 1px rgba(212,202,169,.25) inset;color:var(--accent)}
 
-/* Tiny label */
-.label {
-  letter-spacing: .08em;
-  font-size: .7rem;
-  color: var(--dim);
-}
+/* Class tags (70s muted colors) */
+.tag{padding:.15rem .5rem;border-radius:.35rem;border:1px solid #222;font-size:.7rem}
+.tag-ar{color:var(--c-ar);border-color:color-mix(in oklab,var(--c-ar),black 70%)}
+.tag-er{color:var(--c-er);border-color:color-mix(in oklab,var(--c-er),black 70%)}
+.tag-ir{color:var(--c-ir);border-color:color-mix(in oklab,var(--c-ir),black 70%)}
+.tag-irreg{color:var(--c-irreg);border-color:color-mix(in oklab,var(--c-irreg),black 70%)}
 
-/* Button */
-.btn {
-  border: 1px solid rgba(214,207,182,0.25);
-  background: rgba(214,207,182,0.04);
-  color: var(--text);
-}
-.btn:hover { background: rgba(214,207,182,0.08); }
+/* TTS pill */
+.speak{background:var(--accent);color:#0b0c0d;border-radius:999px}
+.speak:hover{filter:brightness(.95)}
 
-/* Speaker pill */
-.speak {
-  background: var(--accent);
-  color: #0b0c0d;
-}
-.speak:hover { filter: brightness(0.95); }
+/* Small helpers */
+.kv{font-size:.72rem;color:var(--dim);letter-spacing:.08em}
+.kv b{color:var(--text)}
 
-/* Blinking cursor */
-.cursor {
-  width: .55ch; display: inline-block; background: var(--accent);
-  animation: blink 1.2s steps(1,end) infinite;
-}
+.cursor{width:.6ch;display:inline-block;background:var(--accent);animation:blink 1.2s steps(1,end) infinite}
 
-/* Micro “LED” dot */
-.led { width: 6px; height: 6px; background: var(--accent); opacity:.25; }
-.led.active { opacity:.9; box-shadow: 0 0 6px rgba(214,207,182,.6); animation: pulseDot 2.2s ease-in-out infinite; }
+/* Animations */
+@keyframes scan{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}
+@keyframes blink{0%,49%{opacity:0}50%,100%{opacity:1}}
+@keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}
